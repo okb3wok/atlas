@@ -1,0 +1,22 @@
+{% set pageTitle = title %}
+
+{% extends "./base.twig" %}
+
+{% block content %}
+
+
+
+  <section class="singlepage">
+    <div class="container">
+
+      {% if title %}
+      <header class="singlepage__header">
+        <h1>{{ title }}</h1>
+      </header>
+      {% else %}
+      {% endif %}
+      {{ text|markdown_to_html }}
+    </div>
+  </section>
+
+{% endblock %}

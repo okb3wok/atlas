@@ -1,0 +1,60 @@
+.service-promo {
+  background: linear-gradient(0deg, rgba(40, 13, 0, 0.1) 0%, rgba(40, 13, 0, 0.2) 50%), url("../static/atlaskursk_bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  min-height: 515px;
+  padding: 187px 0;
+
+
+  &-arrow {
+    margin: 50px auto;
+    height: 40px;
+    width:40px;
+    display: none;
+    background: url(../static/promo-scroll.svg) no-repeat center;
+    background-size: auto;
+    background-size: 40px;
+    transition: opacity 0.4s;
+    cursor: pointer;
+    @include devices(mobile){
+      display: block;
+    }
+  }
+
+  &>.container{
+    padding: 0 var(--page-padding);
+  }
+
+  &__header{
+    max-width: 615px;
+
+  }
+
+  &__header h1{
+    font-size: 44px;
+    line-height:  calc(var(--line-height)*0.8);
+    margin-bottom: 30px;
+    color: white;
+    font-weight: 600;
+    text-shadow: 0 0 6px #000000;
+
+    @include devices(mobile){
+      font-size: 34px;
+      line-height: calc(var(--line-height)*0.7);
+    }
+  }
+
+  &__short h2{
+    font-size: 21px;
+    line-height:  calc(var(--line-height)*0.8);
+    color: white;
+    font-weight: 400;
+    text-shadow: 0 0 3px #000000;
+    @include devices(mobile){
+
+      line-height: calc(var(--line-height)*0.7);
+    }
+  }
+}

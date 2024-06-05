@@ -1,0 +1,47 @@
+.service-manufacturers {
+
+  background-color: white;
+
+  & > .container {
+    padding: 80px var(--page-padding);
+    max-width: 910px;
+  }
+
+  &__header{
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  &__list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+  &__item a:hover img{
+    transform:scale(1.04) perspective(1px);
+  }
+
+  &__item{
+    flex: 0 1 auto;
+    width: 32%;
+    display: flex;
+    padding: 10px 0;
+    align-items: center;
+    text-align: center;
+
+    & img {
+      transition: transform 0.4s, opacity 0.4s;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @include devices(mobile){
+      width: 48%;
+    }
+
+  }
+}

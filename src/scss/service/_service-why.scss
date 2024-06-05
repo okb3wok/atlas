@@ -1,0 +1,29 @@
+.service-why {
+  font-weight: 400;
+  background: var(--site-bg-color);
+
+  &>.container{
+    max-width: 970px;
+  }
+
+  &__header{
+    text-align: center;
+  }
+
+  & ul li{
+    position: relative;
+    margin-bottom: 16px;
+    padding-left: 30px;
+    overflow: hidden;
+  }
+
+  & ul li::before{
+    content:"";
+    top:13px;
+    left:0;
+    width:20px;
+    height:1px;
+    position:absolute;
+    background-color:#f04931;
+  }
+}

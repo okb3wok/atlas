@@ -1,0 +1,24 @@
+{% set pageTitle = 'Качественная мебель по индивидуальным размерам в Курске | Атлас Курск' %}
+
+{% extends "./base.twig" %}
+
+{% block content %}
+     {% include "./site/sections/service-promo.twig" %}
+     {% include "./site/sections/service-icons.twig" %}
+     {% include "./site/sections/service-why.twig" %}
+     {% include "./site/sections/service-postulates.twig" %}
+     <div id="katalog-produkcii">
+          {% for key, descriptionArray in furnitures %}
+               {% include "./site/sections/furniture.twig" with {'title': key, 'description':descriptionArray}  %}
+          {% endfor %}
+     </div>
+     {% include "./site/sections/service-manufacturers.twig" %}
+     {% include "./site/sections/service-process.twig" %}
+     {% include "./site/sections/service-order.twig" %}
+{#     {{ include('./site/md.twig')|markdown_to_html }}#}
+
+
+
+     {% include "./site/sections/service-contacts.twig" %}
+
+{% endblock %}

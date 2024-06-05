@@ -1,0 +1,47 @@
+.service-icons {
+  background: white;
+  font-weight: 400;
+
+  &>.container{
+    padding: 80px var(--page-padding);
+    @include devices(mobile){
+      padding: 60px var(--page-padding) 0 var(--page-padding);
+    }
+  }
+
+  &__list{
+    display: flex;
+    align-items: center;
+
+    @include devices(mobile){
+      flex-direction: column;
+    }
+
+  }
+
+  &__item{
+    flex: 1 1 auto;
+    width: calc(25% - 42px);
+    max-width: 33.333%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    @include devices(mobile){
+      width: 100%;
+      max-width: 90%;
+      margin-bottom: 40px;
+    }
+
+    &-title{
+      margin-top: 30px;
+      font-size: calc(var(--font-size)*1.2);
+      @include devices(mobile){
+        margin-top: 15px;
+      }
+
+    }
+  }
+
+}

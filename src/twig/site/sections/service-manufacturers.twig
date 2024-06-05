@@ -1,0 +1,15 @@
+<section class="service-manufacturers" id="proizvoditeli">
+  <div class="container">
+    <header class="service-manufacturers__header">
+      <h3>Производители нашей мебели</h3>
+    </header>
+    <div class="service-manufacturers__list">
+      {% for item in manufactures %}
+      <div class="service-manufacturers__item">
+        <a href="{{ item.url }}">
+          <img src="./static/{{ item.logourl }}" alt="{{ item.name }}" /></a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

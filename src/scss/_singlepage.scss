@@ -1,0 +1,13 @@
+.singlepage{
+  background: white;
+}
+
+.singlepage__header h1 {
+  font-size: 44px;
+  line-height: calc(var(--line-height) * 0.8);
+  margin-bottom: 30px;
+  color: var(--title-color);
+  font-weight: 600;
+  text-shadow: 0 0 6px var(--blur-color);
+
+}

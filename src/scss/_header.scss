@@ -1,0 +1,159 @@
+.header{
+
+  flex: 0 1 auto;
+  width:100%;
+  background: #ffffff;
+  position: relative;
+
+  @include devices(mobile){
+    position: fixed;
+    min-width: 300px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    z-index: 1;
+    backdrop-filter: blur(4px);
+    background: rgba(255, 255, 255, 0.7);
+  }
+
+
+
+  & a {
+    text-decoration: var(--link-decoration);
+  }
+
+  &> .wrapper{
+    display: flex;
+    padding: 30rem var(--page-padding);
+    position: relative;
+    justify-content: space-between;
+
+    align-items: center;
+
+    @include devices(mobile){
+      padding: 10rem var(--page-padding);
+    }
+  }
+
+  &-promo{
+    font-weight: 400;
+
+    @include devices(mobile){
+      display: none;
+    }
+  }
+
+  &-schedule{
+    @include devices(mobile){
+      display: none;
+    }
+  }
+
+  &-phone{
+    @include devices(mobile){
+      display: none;
+    }
+  }
+
+  &-social{
+    @extend %whatsapp;
+    @include devices(mobile){
+      display: none;
+    }
+  }
+
+  &-branding{
+    max-width: 240rem;
+    flex: 0 0 auto;
+    text-align: center;
+    display: block;
+    font-weight: 500;
+    line-height: 1.55;
+
+    @include devices(tablet){
+      max-width: 160rem;
+    }
+    margin-bottom: -3px;
+
+
+    //&:hover div svg path{
+    //  fill: var(--prime-color);
+    //  transition: fill .6s;
+    //}
+
+  }
+
+
+
+
+
+  &__menu-toggle{
+    align-self: center;
+    position: absolute;
+    right: var(--page-padding);
+    top:0;
+    bottom:0;
+    z-index: 0;
+    display: none;
+    align-items: center;
+
+    @include devices(mobile){
+      display: flex;
+    }
+    &>button{
+      width: 40px;
+      height: 28px;
+      position: relative;
+      transition: .5s ease-in-out;
+      transform: rotate(0deg);
+      cursor: pointer;
+
+      & span {
+        display: block;
+        position: absolute;
+        height: 4px;
+        width: 100%;
+        background: var(--meta-color);
+        border-radius: 2px;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: .15s ease-in-out;
+      }
+
+
+      & span:nth-child(1) {
+        top: 0;
+        transform-origin: left center;
+      }
+
+      & span:nth-child(2) {
+        top: 12px;
+        transform-origin: left center;
+      }
+
+      & span:nth-child(3) {
+        top: 24px;
+        transform-origin: left center;
+      }
+
+
+
+      &.open span:nth-child(1) {
+        transform: rotate(45deg);
+        top: -2px;
+        left: 6px;
+      }
+
+      &.open span:nth-child(2) {
+        width: 0;
+        opacity: 0;
+      }
+
+      &.open span:nth-child(3) {
+        transform: rotate(-45deg);
+        top: 26px;
+        left: 6px;
+      }
+
+    }
+  }
+}

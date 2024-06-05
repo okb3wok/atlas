@@ -1,0 +1,17 @@
+<div id="preloader" class="preloader show">
+  <div class="preloader__wrapper">
+    <div class="preloader__title">Атлас<span>Курск</span></div>
+    <div class="preloader__spinner"></div>
+    <script>
+      if(window.navigator.userAgent.indexOf('MSIE ') > -1 ||
+        window.navigator.userAgent.indexOf('Trident/') > -1){
+          document.querySelector('.preloader__wrapper').innerHTML='' +
+            '<div class="preloader__title">Атлас<span>Курск</span></div>' +
+            '<p style="color:red;">' +
+            '<strong>Внимение!</strong> Вы используете устаревший браузер Internet Explorer :( <br>' +
+            'Для работы с сайтом откройте его в современном браузере <br>' +
+            '(например Firefox, Chrome, Edge и др.)</p>';
+      }
+    </script>
+  </div>
+</div>
