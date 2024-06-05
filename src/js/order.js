@@ -23,7 +23,7 @@ const order = {
 
 
     //let orderPhone = document.getElementById('service-order-phone');
-    mask("service-order-phone");
+    mask("serviceOrderPhone");
 
 
     let inputs = this.form.querySelectorAll('input, textarea');
@@ -43,17 +43,86 @@ const order = {
 
     })
 
+
+    const PHONE_REGEXP = /^\+(\d{11}|\d{12})$/;
+
+    const isPhoneValid = (value) => {
+      return PHONE_REGEXP.test(value.replace(/[\s#\-)(]/g, ''));
+    }
+
+
+
+    serviceOrderSubmit.addEventListener('click', (event)=>{
+      event.preventDefault();
+
+      let msg = '';
+
+
+      if(isPhoneValid(serviceOrderPhone.value) ){
+        msg = '<i style="color: green;">Отправляем...</i>';
+        serviceOrderMsg.innerHTML = msg;
+
+        let payload = {
+          data: {
+            method: 'requestOrder',
+            request: {
+              phone: serviceOrderPhone.value,
+              descr: serviceOrderDetails.value,
+              name: serviceOrderName.value
+            }
+          }
+        };
+
+        requestAPI('https://atlaskursk.ru/api.php','POST', payload).then(
+          (result) => {
+            if(result.result){
+              msg = '<i style="color: green;">' + result.status + '</i>';
+              serviceOrderMsg.innerHTML = msg;
+              serviceOrderPhone.value = '';
+            }else {
+              msg = '<i style="color: red;">' + result.status + '</i>';
+              serviceOrderMsg.innerHTML = msg;
+            }
+          });
+
+      }else{
+
+        msg = '<i style="color: red;">Не верные данные</i>';
+        serviceOrderMsg.innerHTML = msg;
+
+
+        if(!isPhoneValid(callbackPhone.value)){
+          serviceOrderPhone.style.borderColor = 'red';
+        }
+
+        // Обработчик Телефона
+        serviceOrderPhone.addEventListener('input',onPhoneInput)
+        function onPhoneInput() {
+          let entered = this.value;
+          if (isPhoneValid(entered)) {
+            serviceOrderPhone.style.borderColor = 'green';
+            serviceOrderMsg.innerHTML = '';
+            // msg.show = false;
+            // orderMsg(msg);
+          }else{
+            serviceOrderPhone.style.borderColor = 'red';
+          }
+        }
+
+
+      }
+
+    })
+
+
+
     let callbackButton = document.getElementById('callbackButton');
 
     callbackButton.addEventListener('click',(event)=>{
 
       event.preventDefault();
 
-      const PHONE_REGEXP = /^\+(\d{11}|\d{12})$/;
 
-      const isPhoneValid = (value) => {
-        return PHONE_REGEXP.test(value.replace(/[\s#\-)(]/g, ''));
-      }
 
       let msg = '';
 

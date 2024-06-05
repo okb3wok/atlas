@@ -56,7 +56,9 @@ const swiper = {
 
       links.forEach( (el)=>{
 
-        let origin = document.location.host;
+        let origin = "atlaskursk.ru"; // for dev purpose
+        //let origin = document.location.host;
+
         const IMG_REGEXP = new RegExp(`^(.*)${origin}(.*)\.(gif|jpg|bmp|png)$`, 'g');
         if(IMG_REGEXP.test(el.href))
         {
@@ -66,8 +68,6 @@ const swiper = {
             document.body.style.position = 'sticky';
             document.body.style.top = window.scrollY;
             document.getElementById('swiper-container').classList.replace('hidden', 'show');
-
-
 
             let imgIndex = images.findIndex((el)=>{ return el === event.target.parentElement.href})
             swiper1.slideTo(imgIndex, 0, false)

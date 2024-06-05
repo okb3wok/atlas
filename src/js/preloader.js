@@ -22,8 +22,8 @@ const preloader = {
     preloader.classList.replace('show', 'hide');
 
     setTimeout(() => {
-      //preloader.remove(); // for other
-      preloader.parentNode.removeChild(preloader); // for ie11
+      preloader.remove(); // for other
+      //preloader.parentNode.removeChild(preloader); // for ie11
 
 
 

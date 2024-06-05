@@ -15,21 +15,21 @@
         <p>
           Заполните форму, и менеджер свяжется с вами для обсуждения деталей
         </p>
-
+        <div id="serviceOrderMsg"></div>
         <form class="service-order__form" id="order-form" method="post">
           <div class="atlas-input-item">
             <label for="service-order-name" class="atlas-input-label">Имя</label>
-            <input class="atlas-input" type="text" id="service-order-name" name="service-order-name" value="" size="60" maxlength="255" placeholder="" />
+            <input class="atlas-input" type="text" id="serviceOrderName" name="service-order-name" value="" size="60" maxlength="255" placeholder="" />
           </div>
           <div class="atlas-input-item">
             <label for="service-order-phone" class="atlas-input-label form-required">Номер телефона</label>
-            <input class="atlas-input" type="text" id="service-order-phone" name="service-order-phone" value="" size="40" maxlength="255" placeholder="" required="required" />
+            <input class="atlas-input" type="text" id="serviceOrderPhone" name="service-order-phone" value="" size="40" maxlength="255" placeholder="" required="required" />
           </div>
           <div class="atlas-input-item">
             <label for="service-order-details" class="atlas-input-label">Ваш вопрос</label>
-            <textarea class="atlas-input" id="service-order-details" name="service-order-details" rows="5" cols="60" placeholder=""></textarea>
+            <textarea class="atlas-input" id="serviceOrderDetails" name="service-order-details" rows="5" cols="60" placeholder=""></textarea>
           </div>
-          <input type="submit" id="service-order-submit" name="service-order-submit" value="Отправить" class="atlas-button-medium" >
+          <input type="submit" id="serviceOrderSubmit" name="service-order-submit" value="Отправить" class="atlas-button-medium" >
         </form>
       </div>
     </div>

@@ -37,9 +37,9 @@ const config = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/twig2/templates/single-column.twig',
+            template: './src/twig/dev.twig',
             filename: 'index.html',
-            inject: 'body',
+            inject: false, // inject: 'body',
         }),
         new MiniCssExtractPlugin({
             filename: 'atlas.css'
@@ -49,6 +49,14 @@ const config = {
                 {
                     from: path.resolve(__dirname, 'src/static'),
                     to: path.resolve(__dirname, 'dist/static')
+                },
+            ],
+        }),
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: path.resolve(__dirname, 'src/twig'),
+                    to: path.resolve(__dirname, 'dist/twig')
                 },
             ],
         }),

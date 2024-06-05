@@ -87,6 +87,11 @@ const map = {
 
       }
 
+      let mapElement = document.getElementById(mapID)
+      if(!mapElement){
+        console.log('[Atlas script] Can`t find map');
+        return;
+      }
       initMap();
 
     }
