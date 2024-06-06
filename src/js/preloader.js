@@ -12,7 +12,7 @@ const preloader = {
 
   preloaderHide(transition = this.transition) {
 
-    //const { el:preloader } = this; //TODO To think
+    //const { el:preloader } = this;
 
     const preloader = this.el;
 
@@ -24,9 +24,6 @@ const preloader = {
     setTimeout(() => {
       preloader.remove(); // for other
       //preloader.parentNode.removeChild(preloader); // for ie11
-
-
-
 
     }, transition);
 

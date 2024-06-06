@@ -21,10 +21,7 @@ const order = {
     })
 
 
-
-    //let orderPhone = document.getElementById('service-order-phone');
     mask("serviceOrderPhone");
-
 
     let inputs = this.form.querySelectorAll('input, textarea');
 
@@ -49,7 +46,6 @@ const order = {
     const isPhoneValid = (value) => {
       return PHONE_REGEXP.test(value.replace(/[\s#\-)(]/g, ''));
     }
-
 
 
     serviceOrderSubmit.addEventListener('click', (event)=>{
@@ -95,15 +91,12 @@ const order = {
           serviceOrderPhone.style.borderColor = 'red';
         }
 
-        // Обработчик Телефона
         serviceOrderPhone.addEventListener('input',onPhoneInput)
         function onPhoneInput() {
           let entered = this.value;
           if (isPhoneValid(entered)) {
             serviceOrderPhone.style.borderColor = 'green';
             serviceOrderMsg.innerHTML = '';
-            // msg.show = false;
-            // orderMsg(msg);
           }else{
             serviceOrderPhone.style.borderColor = 'red';
           }
@@ -122,10 +115,7 @@ const order = {
 
       event.preventDefault();
 
-
-
       let msg = '';
-
 
       if(isPhoneValid(callbackPhone.value) ){
         msg = '<i style="color: green;">Отправляем...</i>';
@@ -158,19 +148,15 @@ const order = {
         msg = '<i style="color: red;">Не верные данные</i>';
         callbackMsg.innerHTML = msg;
 
-
         if(!isPhoneValid(callbackPhone.value)){
           callbackPhone.style.borderColor = 'red';
         }
 
-        // Обработчик Телефона
         callbackPhone.addEventListener('input',onPhoneInput)
         function onPhoneInput() {
           let entered = this.value;
           if (isPhoneValid(entered)) {
             callbackPhone.style.borderColor = 'green';
-            // msg.show = false;
-            // orderMsg(msg);
           }else{
             callbackPhone.style.borderColor = 'red';
           }
@@ -179,15 +165,7 @@ const order = {
 
       }
 
-
-
-
     })
-
-
-
-
-
 
   }
 }

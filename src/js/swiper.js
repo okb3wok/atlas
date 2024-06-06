@@ -37,13 +37,6 @@ const swiper = {
     });
 
 
-    //document.getElementById('swiper-container').classList.remove('hidden')
-
-
-    // window.addEventListener('scroll', ()=>{
-    //   console.log(window.scrollY)
-    // })
-
     if (swiper1){
 
       let links = document.querySelectorAll('a');
@@ -89,20 +82,11 @@ const swiper = {
       return;
     }
 
-
-
-
-
-
-
     let swiperClose = document.getElementById('swiper-close');
     swiperClose.addEventListener('click', ()=>{
       document.getElementById('swiper-container').classList.replace('show', 'hidden');
       document.body.style.position = '';
       document.body.style.top = '';
-
-
-
 
     })
 
