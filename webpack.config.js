@@ -20,7 +20,7 @@ const config = {
     entry: './src/index.js',
     output: {
         clean: true,
-        path: path.resolve(__dirname, 'docs'),
+        path: path.resolve(__dirname, 'dist'),
         filename: 'atlas.js',
         environment: {
             // The environment supports arrow functions ('() => { ... }').
@@ -48,7 +48,7 @@ const config = {
             patterns: [
                 {
                     from: path.resolve(__dirname, 'src/static'),
-                    to: path.resolve(__dirname, 'docs/static')
+                    to: path.resolve(__dirname, 'dist/static')
                 },
             ],
         }),
@@ -56,7 +56,7 @@ const config = {
             patterns: [
                 {
                     from: path.resolve(__dirname, 'src/twig'),
-                    to: path.resolve(__dirname, 'docs/twig')
+                    to: path.resolve(__dirname, 'dist/twig')
                 },
             ],
         }),
@@ -64,7 +64,7 @@ const config = {
             patterns: [
                 {
                     from: path.resolve(__dirname, 'src/img'),
-                    to: path.resolve(__dirname, 'docs/img')
+                    to: path.resolve(__dirname, 'dist/img')
                 },
             ],
         }),
